@@ -43,7 +43,7 @@
 \institute[NCRA-TIFR]{NCRA-TIFR} % (optional, but mostly needed) {NCRA}
 
 \date[IUCAA-TLC Python course] % (optional) 
-{Nov-Dec 2021}
+{Nov-Dec 2023}
 
 \subject{Talks}
 % This is only inserted into the PDF information catalog. Can be left
@@ -108,7 +108,7 @@
 
 I am a faculty member at the National Centre for Radio Astrophysics, TIFR in Pune, India. I taught myself Python in late 2001, when I was a postdoc. I have used Python extensively for astronomical data analysis since 2003. I have taught an introductory Python programming course four times between 2009-2014.
 
-This course represents my first attempt to teach Python programming online.
+This course represents my second attempt to teach Python programming online.
 
 \end{frame}
 
@@ -192,6 +192,7 @@ For data analysis of large datasets, you will need a local installation.
 \item Very extensible with C, C++, or Fortran, portable distribution mechanisms available
 \item Free; non-restrictive license; open source
 \item it is now the standard scripting language for data analysis
+\item it is the most popular language for AI/ML researchers
 \item very powerful array processing capabilities ({\it numpy})
 \item extensive documentation - Many books and on-line documentation resources available (for the core language and its packages)
 \ei
@@ -201,7 +202,7 @@ For data analysis of large datasets, you will need a local installation.
 \ft{Why python?}
 \bi
 \item superb database interfaces to all popular databases.
-\item Clean code (very few non-­alpha--numerics)
+\item Clean code (very few non-ï¿½alpha--numerics)
 \item {\bf forced indentation} (back to old Fortran?)
 \item concise
 \item great for large teams
@@ -216,7 +217,7 @@ For data analysis of large datasets, you will need a local installation.
 \bi
 \item More items to install separately (eased by prepackaged distributions like Anaconda and package management tools)
 \item Some specialised scientific libraries not as stable or fast as in Fortran
-\item but many Fortran libraries are wrapped: e.g. The NAG Library for Python is available through the {\it naginterfaces} package, with full access to the mathematical and statistical routines. The IMSL Python library allows access to IMSLroutines. 
+\item but many old Fortran libraries are wrapped: e.g. The NAG Library for Python is available through the {\it naginterfaces} package, with full access to the mathematical and statistical routines. The IMSL Python library allows access to IMSLroutines. 
 \item Array indexing convention backwards, compared to Fortran
 \item Small array performance slower (eased greatly by {\it numpy})
 \ei
@@ -254,6 +255,7 @@ For data analysis of large datasets, you will need a local installation.
 \item APECS (APEX control software)
 \item KAT-7 Control and Monitoring System is in Python
 \item Presto - pulsar search and analysis suite; recent routines in Python
+\item SKA control software will be mostly in Python 
 \ei
 \end{frame}
 
@@ -268,6 +270,7 @@ For data analysis of large datasets, you will need a local installation.
 \item good numerical computation capabilities
 \item good plotting capabilities
 \item most popular language for AI/ML researchers
+\item excellent auto code generation with generative AI tools like OpenAI's GPT-4
 \ei
 \end{frame}
 
@@ -279,50 +282,13 @@ for data analysis with special emphasis on astronomy.
 \bfr
 \ft{Learning resources: Books}
 
-A search for ``Python programming'' on the books section of Amazon.in (as of Nov 2021) shows more than 7000 books. 
+A search for ``Python programming'' on the books section of Amazon.in (as of Dec 2024) shows more than 20000 books. 
 
 Many of these are beginner level books. Which one you choose depends on your learning style and personal preferences. So, I will desist from making specific recommendations.
 
 Many of the popular books have gone through multiple editions. Be sure to get the most recent one.
 
 \end{frame}
-
-%% \bfr
-%% \ft{Standard book for beginners - Lutz \& Ascher}
-%% \myfig{learningpython.png}
-%% \end{frame}
-
-%% \bfr
-%% \ft{A new primer by Langtangen}
-%% \myfig{langtangenprimer.png}
-%% \end{frame}
-
-%% \bfr
-%% \ft{Book for intermediate level}
-%% \myfig{programmingpython.png}
-%% \end{frame}
-
-%% \bfr
-%% \ft{Python Cookbook contains many recipes}
-%% \myfig{pythoncookbook.png}
-%% \end{frame}
-
-%% \bfr
-%% \ft{A Python quick reference by Martelli}
-%% \myfig{pythoninanutshell.png}
-%% \end{frame}
-
-%% \bfr
-%% \ft{Another reference book by Beazley}
-%% \myfig{pythonessentialreference.png}
-%% \end{frame}
-
-%% \bfr \ft{Python for Scientific Computing by Langtangen}
-%% \myfig{pythonlangtangen.png}
-%% \end{frame}
-
-%% \bfr \ft{Python for Data Analysis} \myfig{pythonfordataanalysis.jpg}
-%% \end{frame}
 
 \bfr
 \ft{Online Material}
@@ -348,6 +314,21 @@ Two major versions of Python are in widespread use. Python 2 and Python 3. Each 
 \end{frame}
 
 \bfr
+\ft{Python 3.10 Updates}
+
+Python 3.10 introduces several new features and optimizations, including:
+
+\bi
+\item Structural Pattern Matching: A new way of handling complex data structures.
+\item Parenthesized Context Managers: Allowing multiple context managers in a single with statement.
+\item Precise line numbers for debugging and other tools.
+\ei
+
+Ensure you have Python 3.10 (or newer) installed to take advantage of these features.
+
+\end{frame}
+
+\bfr
 \ft{Hello World program}
 
 {\tt
@@ -365,13 +346,12 @@ simply type {\it python} at the command prompt
 {\tt
   \$ python3
 
-Python 3.9.7 (default, Sep 10 2021, 14:59:43) 
-
-[GCC 11.2.0] on linux
-
+Python 3.10.12 (main, Nov  6 2024, 20:22:13) [GCC 11.4.0] on linux
+  
 Type "help", "copyright", "credits" or "license" for more information.
-
-$>>>$ 
+  
+$>>> $
+  
 }
 \end{frame}
 
@@ -383,18 +363,17 @@ simply type {\it ipython} at the command prompt.
 
 {\tt
   \$ ipython3
-
-Python 3.9.7 (default, Sep 10 2021, 14:59:43) 
+Python 3.10.12 (main, Nov  6 2024, 20:22:13) [GCC 11.4.0]
 
 Type 'copyright', 'credits' or 'license' for more information
 
-IPython 7.20.0 -- An enhanced Interactive Python. Type '?' for help.
+IPython 7.31.1 -- An enhanced Interactive Python. Type '?' for help.
 
 In [1]: 
 }
 
 
-Ipython is the shell for astronomy analysis packages - casapy and Pyraf.
+Ipython is the shell for some astronomy analysis packages - casapy and Pyraf.
 
 \end{frame}
 
