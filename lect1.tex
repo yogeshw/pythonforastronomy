@@ -1,0 +1,448 @@
+\documentclass{beamer}
+
+\mode<presentation> 
+{ \usetheme{Madrid}
+%\usecolortheme[overlystylish]{albatross} 
+%\usecolortheme{lily} 
+}
+
+\usepackage{graphicx} \usepackage{subfigure}
+
+\usepackage[english]{babel}
+
+\usepackage[latin1]{inputenc}
+
+\usepackage{url}
+
+\usepackage{times} \usepackage[T1]{fontenc}
+% Or whatever. Note that the encoding and the font should match. If T1
+% does not look nice, try deleting the line with the fontenc.
+
+\newcommand{\bi}{\begin{itemize}}
+\newcommand{\ei}{\end{itemize}}
+\newcommand{\be}{\begin{enumerate}}
+\newcommand{\ee}{\end{enumerate}}
+
+\newcommand{\bfr}{\begin{frame}}
+\newcommand{\efr}{\end{frame}}
+\newcommand{\ft}[1]{\frametitle{#1}}
+
+\newcommand{\myfig}[1]{\begin{figure} \includegraphics[width=0.9\textwidth,height=0.7\textheight,keepaspectratio=true]{/home/yogesh/work/images/#1} \end{figure}}
+
+\title[] % (optional, use only with long paper titles) 
+{Astronomical data analysis using Python}
+
+\subtitle{Lecture 1} % (optional)
+
+\author[Yogesh Wadadekar] % (optional, use only with lots of authors) 
+{Yogesh Wadadekar}
+
+% - Use the \inst{?} command only if the authors have different
+%   affiliation.
+
+\institute[NCRA-TIFR]{NCRA-TIFR} % (optional, but mostly needed) {NCRA}
+
+\date[IUCAA-TLC Python course] % (optional) 
+{Nov-Dec 2021}
+
+\subject{Talks}
+% This is only inserted into the PDF information catalog. Can be left
+% out. 
+
+
+% If you have a file called "university-logo-filename.xxx", where xxx
+% is a graphic format that can be processed by latex or pdflatex,
+% resp., then you can add a logo as follows:
+
+ \pgfdeclareimage[height=1cm]{university-logo}{/home/yogesh/work/images/ncralogo}
+ \logo{\pgfuseimage{university-logo}}
+
+
+% Delete this, if you do not want the table of contents to pop up at
+% the beginning of each subsection:
+%\AtBeginSubsection[]
+%{
+%  \begin{frame}<beamer>{Outline}
+%    \tableofcontents[currentsection,currentsubsection]
+%  \end{frame}
+%}
+
+
+% If you wish to uncover everything in a step-wise fashion, uncomment
+% the following command: 
+
+%\beamerdefaultoverlayspecification{<+->}
+
+\begin{document}
+
+\bfr
+  \titlepage
+\end{frame}
+
+%\begin{frame}{Outline}
+%  \tableofcontents
+  % You might wish to add the option [pausesections]
+%\end{frame}
+
+\bfr
+\ft{What this course is about?}
+\bi
+\item prerequisites - no previous programming experience needed, but conceptual understanding will be easier if you have some prior experience in another language. We will be provinding all the slides used in lectures as well as edited videos via YouTube. If you find the pace of the course to be too fast (and you will, if you are an absolute beginner to programming), please review the slides and talk videos periodically. Practice the code snippets provided.
+\pause
+\item given the large number of participants in the course, I will only take questions at the end of each lecture. We will also use the Moodle forum for interactions.
+\ei
+\end{frame}
+
+\bfr
+\ft{What I will teach you in this course (10 lectures of 1 hour each + at least 2 tutorials}
+\bi
+\item the core Python language (6 lectures)
+\item how to use Python for numerical computing (1 lecture)
+\item how to use Python for making plots (1 lecture)
+\item how to use Python for astronomy specific data analysis using astropy and astroquery. (2 lectures)
+\ei 
+\end{frame}
+
+\bfr
+\ft{A bit about myself}
+
+I am a faculty member at the National Centre for Radio Astrophysics, TIFR in Pune, India. I taught myself Python in late 2001, when I was a postdoc. I have used Python extensively for astronomical data analysis since 2003. I have taught an introductory Python programming course four times between 2009-2014.
+
+This course represents my first attempt to teach Python programming online.
+
+\end{frame}
+
+\bfr
+\ft{Acknowlegements}
+
+\begin{figure}
+    \centering
+    \mbox{\subfigure{\includegraphics[height=4.5cm]{/home/yogesh/work/images/kaustubhv.jpg}}\quad
+        \subfigure{\includegraphics[height=4.5cm]{/home/yogesh/work/images/preetish.jpeg} }}
+    \caption{Dr. Kaustubh Vaghmare (left) and Dr. Preetish K. Mishra (right)} \label{fig12}
+\end{figure}
+
+\end{frame}
+
+\bfr
+\ft{My slice of Python}
+
+The ultimate goal of this course is to introduce you to {\it astronomical data analysis} using Python. Due to the limited contact hours in this course, we will take the most direct path to the ultimate goal. This means I will consciously {\it ignore most aspects of the language that are not relevant to data analysis}
+
+Only the final few lectures will focus on specific usage of Python in astronomy data analysis. If you are planning to use Python for data analysis in other domain areas, much of the course will still be useful for you.
+
+Usage of Python has exploded in data science (AI/ML) applications. {\it This course will not be covering those aspects.}
+
+\end{frame}
+
+\bfr
+\ft{Programming is a craft - it requires doing}
+
+Computer programming requires practice. If you know a programming language without using it, your knowledge will soon rust away.
+
+Given the number of participants in this course, it becomes difficult to implement this idea. So the onus is on you!
+
+From the second lecture onwards, I will share with you all the code we
+use in class. Please use it to clarify your understanding and to
+practice your skills. And after the course is over, please continue to
+study and modify other people's code and then start to write your own. There is
+no shortcut to writing good programs!
+
+\end{frame}
+
+\bfr
+\ft{Installing Python on your computer}
+
+https://realpython.com/installing-python/
+
+The above webpage provides detailed instructions on installing Python on Linux, Windows, and Mac-OSX. We do not have the resources to troubleshoot installation problems. Use online resources or consult a local expert if you face difficulties.
+
+If you don't have Python installed, please spend the next few days to get it working on your machine.
+\end{frame}
+
+\bfr
+\ft{Jupyter notebooks from JupyterLab}
+
+JupyterLab is an open-source web application that allows you to create and share documents that contain code, plots and narrative text. It works with many programming languages including, of course, Python.
+
+We will use Jupyter notebooks (like in Mathematica!) starting with the second lecture of this course. The notebooks for each lecture will be shared with you right after the lecture. To install JupyterLab on your computer, please follow the instructions at:
+
+{\small https://jupyterlab.readthedocs.io/en/stable/getting\_started/installation.html}
+
+\end{frame}
+
+\bfr
+\ft{Google Colab - an online Cloud based Python notebook}
+
+Installing Python on your computer will give you the maximum and power and flexibility. However, if you are unable to install it for some reason, you can create online Jupyter notebooks using Google Colab at:
+
+https://colab.research.google.com/
+
+You can use Google Drive to save any notebooks you create with Google Collab. You can even load the notebooks for this course into Google Colab and then modify and run them there. 
+
+For data analysis of large datasets, you will need a local installation.
+
+\end{frame}
+
+\bfr
+\ft{Why Python?}
+\bi
+\item  A powerful, general purpose programming language, yet easy to learn. Strong, but optional, {\it object Oriented programming} support
+\item Very large user and developer community, very extensive and broad library base
+\item Very extensible with C, C++, or Fortran, portable distribution mechanisms available
+\item Free; non-restrictive license; open source
+\item it is now the standard scripting language for data analysis
+\item very powerful array processing capabilities ({\it numpy})
+\item extensive documentation - Many books and on-line documentation resources available (for the core language and its packages)
+\ei
+\end{frame}
+
+\bfr
+\ft{Why python?}
+\bi
+\item superb database interfaces to all popular databases.
+\item Clean code (very few non-­alpha--numerics)
+\item {\bf forced indentation} (back to old Fortran?)
+\item concise
+\item great for large teams
+\item Plotting is easy (and very easy if you know Matlab) using {\it matplotlib}
+\item Support for many widget systems for GUI development
+\item many other advantages which I have not listed
+\ei
+\end{frame}
+
+\bfr
+\ft{Disadvantages of Python}
+\bi
+\item More items to install separately (eased by prepackaged distributions like Anaconda and package management tools)
+\item Some specialised scientific libraries not as stable or fast as in Fortran
+\item but many Fortran libraries are wrapped: e.g. The NAG Library for Python is available through the {\it naginterfaces} package, with full access to the mathematical and statistical routines. The IMSL Python library allows access to IMSLroutines. 
+\item Array indexing convention backwards, compared to Fortran
+\item Small array performance slower (eased greatly by {\it numpy})
+\ei
+\end{frame}
+
+\bfr
+\ft{Python's popularity is exploding}
+\myfig{python_popularity.png}
+\flushleft{Credit: Stack Overflow}
+\end{frame}
+
+\bfr
+\ft{Many job openings for Python programmers}
+\myfig{pythonnaukri2021.png}
+\flushleft{Credit: naukri.com}
+\end{frame}
+
+\bfr
+\ft{Python usage in optical astronomy}
+\bi
+\item STScI PyRAF (IRAF) + additional Python only routines
+\item ESO PyMIDAS (MIDAS)
+\item Astro-WISE (widefield imaging system)
+\item Pyephem - solar system ephemeris
+\item Rubin/LSST is using Python/C++ for their software stack
+\ei
+\end{frame}
+
+\bfr
+\ft{Python usage in Radio astronomy}
+\bi
+\item CasaPy (CASA) - AIPS++ based, default system for EVLA and ALMA data analysis. Many Python based data reduction pipelines for different telescopes use CASA.
+\item ParselTongue - call AIPS tasks from Python. SPAM uses ParselTongue.
+\item PYGILDAS (GILDAS) - IRAM data analysis software ported to Python
+\item APECS (APEX control software)
+\item KAT-7 Control and Monitoring System is in Python
+\item Presto - pulsar search and analysis suite; recent routines in Python
+\ei
+\end{frame}
+
+\bfr
+\ft{Python for scientists and engineers}
+\bi
+\item full featured, high level programming language
+\item very easy to learn -- National Mission on Education through ICT sponsored a large program to develop computer education materials in Python for school and college students (http://python.fossee.in/).
+\item powerful text processing capabilities - many sysadmins have adopted it.
+\item powerful interfaces to almost any database
+\item web-friendly language - many packages available for controlling and accessing content on websites.
+\item good numerical computation capabilities
+\item good plotting capabilities
+\item most popular language for AI/ML researchers
+\ei
+\end{frame}
+
+\bfr
+\ft{Our course focused on using Python}
+for data analysis with special emphasis on astronomy.
+\end{frame}
+
+\bfr
+\ft{Learning resources: Books}
+
+A search for ``Python programming'' on the books section of Amazon.in (as of Nov 2021) shows more than 7000 books. 
+
+Many of these are beginner level books. Which one you choose depends on your learning style and personal preferences. So, I will desist from making specific recommendations.
+
+Many of the popular books have gone through multiple editions. Be sure to get the most recent one.
+
+\end{frame}
+
+%% \bfr
+%% \ft{Standard book for beginners - Lutz \& Ascher}
+%% \myfig{learningpython.png}
+%% \end{frame}
+
+%% \bfr
+%% \ft{A new primer by Langtangen}
+%% \myfig{langtangenprimer.png}
+%% \end{frame}
+
+%% \bfr
+%% \ft{Book for intermediate level}
+%% \myfig{programmingpython.png}
+%% \end{frame}
+
+%% \bfr
+%% \ft{Python Cookbook contains many recipes}
+%% \myfig{pythoncookbook.png}
+%% \end{frame}
+
+%% \bfr
+%% \ft{A Python quick reference by Martelli}
+%% \myfig{pythoninanutshell.png}
+%% \end{frame}
+
+%% \bfr
+%% \ft{Another reference book by Beazley}
+%% \myfig{pythonessentialreference.png}
+%% \end{frame}
+
+%% \bfr \ft{Python for Scientific Computing by Langtangen}
+%% \myfig{pythonlangtangen.png}
+%% \end{frame}
+
+%% \bfr \ft{Python for Data Analysis} \myfig{pythonfordataanalysis.jpg}
+%% \end{frame}
+
+\bfr
+\ft{Online Material}
+\bi
+\item www.python.org 
+\pause
+\item Start with the Python tutorial - http://docs.python.org/tutorial/ \alert{we will cover all of it and more in this course.}
+\pause
+\item SciPy conferences - http://conference.scipy.org - lots of interesting talks (many with video versions)
+\pause
+\item Also check out the variety of excellent Python programming courses on coursera and eDx. Lots of good videos on YouTube
+\pause  
+\item Stack Overflow is a very useful question and answer website for all your Python questions
+\item http://python.fossee.in also has a number of tutorials.
+\ei
+\end{frame}
+
+\bfr
+\ft{Python Version 2 or 3?}
+
+Two major versions of Python are in widespread use. Python 2 and Python 3. Each has many sub-versions in use. {\bf We will exclusively use Python 3 in this course}, since all major data analysis related packages have been ported to Python 3 and are now very stable. 
+
+\end{frame}
+
+\bfr
+\ft{Hello World program}
+
+{\tt
+\$ python -c 'print ("Hello World")'
+
+Hello World
+}
+\end{frame}
+
+\bfr
+\ft{Starting Python}
+
+simply type {\it python} at the command prompt
+
+{\tt
+  \$ python3
+
+Python 3.9.7 (default, Sep 10 2021, 14:59:43) 
+
+[GCC 11.2.0] on linux
+
+Type "help", "copyright", "credits" or "license" for more information.
+
+$>>>$ 
+}
+\end{frame}
+
+\bfr
+\ft{Ipython - an enhanced python shell}
+simply type {\it ipython} at the command prompt.
+
+\bigskip
+
+{\tt
+  \$ ipython3
+
+Python 3.9.7 (default, Sep 10 2021, 14:59:43) 
+
+Type 'copyright', 'credits' or 'license' for more information
+
+IPython 7.20.0 -- An enhanced Interactive Python. Type '?' for help.
+
+In [1]: 
+}
+
+
+Ipython is the shell for astronomy analysis packages - casapy and Pyraf.
+
+\end{frame}
+
+\bfr
+\ft{Jupyter notebook - we will use this in our course!}
+\alert{Demo}
+\end{frame}
+
+\bfr
+\ft{Programming language flowchart}
+\myfig{proglanguageflowchart.png}
+\flushleft{Credit: zappable.com}
+\end{frame}
+
+\bfr
+\ft{The Zen of Python, by Tim Peters {\it import this}}
+Beautiful is better than ugly.\\
+Explicit is better than implicit.\\
+Simple is better than complex.\\
+Complex is better than complicated.\\
+Flat is better than nested.\\
+Sparse is better than dense.\\
+Readability counts.\\
+Special cases aren't special enough to break the rules.\\
+Although practicality beats purity.\\
+Errors should never pass silently.\\
+Unless explicitly silenced.\\
+In the face of ambiguity, refuse the temptation to guess.\\
+There should be one-- and preferably only one --obvious way to do it.\\
+Although that way may not be obvious at first unless you're Dutch.\\
+Now is better than never.\\
+\end{frame}
+
+\bfr
+\ft{The Zen of Python, by Tim Peters {\it import this}}
+Although never is often better than *right* now.\\
+If the implementation is hard to explain, it's a bad idea.\\
+If the implementation is easy to explain, it may be a good idea.\\
+Namespaces are one honking great idea -- let's do more of those!\\
+\end{frame}
+
+\bfr
+\ft{That Python feeling}
+\myfig{pythonflying.png}
+\flushleft{Credit: XKCD}
+\end{frame}
+
+
+\end{document}
+
+
