@@ -7,7 +7,7 @@ This repository contains materials for the "Astronomical Data Analysis using Pyt
 - **Title**: Astronomical data analysis using Python
 - **Lecturer**: Yogesh Wadadekar
 - **Institution**: NCRA-TIFR
-- **Course Duration**: Nov-Dec 2021
+- **Course Duration**: Dec 2024
 - **Course Format**: 10 lectures of 1 hour each + at least 2 tutorials
 
 ## Course Content
