@@ -4,10 +4,13 @@
 This repository contains materials for the "Astronomical Data Analysis using Python" course conducted by Yogesh Wadadekar at NCRA-TIFR.
 
 ## Course Overview
+This course is an introduction to Python programming and its applications in astronomical data analysis. It covers the core Python language, numerical computing with NumPy, plotting with Matplotlib, and astronomy-specific data analysis using `astropy` and `astroquery`.
+
+## Course Details
 - **Title**: Astronomical data analysis using Python
 - **Lecturer**: Yogesh Wadadekar
 - **Institution**: NCRA-TIFR
-- **Course Duration**: Dec 2024
+- **Course Duration**: Jan 2025
 - **Course Format**: 10 lectures of 1 hour each + at least 2 tutorials
 
 ## Course Content
